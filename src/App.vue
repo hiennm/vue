@@ -2,33 +2,26 @@
   <div id="app">
     <img v-show="showLogo" @click="showLogo=!showLogo"  alt="Vue logo" src="./assets/logo.png">
     
-    <HelloWorld v-for="x in 10" :msg="title + x" :key="x"/>
+    <counter-button :count="0"/>
+    <counter-button :count="0"/>
+    <counter-button :count="0"/>
+    <counter-button :count="0"/>
     
-    <ul>
-      <li v-for="(value, name, index) in list" :key="value">
-        {{index+1}}. {{name.charAt(0).toUpperCase()+name.substring(1)}} : {{value}}
-      </li>
-    </ul>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import CounterButton from './components/CounterButton.vue'
 import { setTimeout } from 'timers';
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    CounterButton
   },
   data:function() {
     return{
-      showLogo:true,
-      title: 'Hi there',
-      list: {
-        name:'Hien',
-        age: 38
-      }          
+      showLogo: true             
     }
   },
   watch:{
