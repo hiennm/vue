@@ -7,8 +7,7 @@ export default {
     name: 'CounterButton',
     props: {
         count: Number
-    }
-    
+    }    
 }
 </script>
 
